@@ -1,0 +1,48 @@
+﻿@model Pasteleria.Models.PastelDTO
+
+@{
+    ViewData["Title"] = "Agregar Pastel";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Agregar Pastel</h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Agregar" method="post">
+                        <div class="form-group">
+                            <label asp-for="Nombre" class="control-label"></label>
+                            <input asp-for="Nombre" class="form-control" />
+                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Origen" class="control-label"></label>
+                            <input asp-for="Origen" class="form-control" />
+                            <span asp-validation-for="Origen" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Precio" class="control-label"></label>
+                            <input asp-for="Precio" class="form-control" />
+                            <span asp-validation-for="Precio" class="text-danger"></span>
+                        </div>
+                        <div class="form-group mt-3">
+                            <button type="submit" class="btn btn-primary">Agregar</button>
+                            <a asp-action="Lista" class="btn btn-secondary">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

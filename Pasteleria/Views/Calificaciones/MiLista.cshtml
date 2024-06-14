@@ -1,0 +1,31 @@
+﻿@model List<Pasteleria.Models.CalificacionDTO>
+
+@{
+    ViewData["Title"] = "Lista de Calificaciones";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Pastel</th>
+            <th>Sabor</th>
+            <th>Presentación</th>
+            <th>Editar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Usuario</td>
+                <td>@item.Pastel</td>
+                <td>@item.Sabor</td>
+                <td>@item.Presentacion</td>
+                <td><a asp-action="Editar" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Editar</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

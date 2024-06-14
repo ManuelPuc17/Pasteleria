@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Invalid Operation";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="text-center">
+            <h1 class="display-4">Invalid Operation</h1>
+            <p class="lead">No está permitido modificar datos que no le pertenecen.</p>
+            <a class="btn btn-primary" asp-controller="Pastel" asp-action="Lista">Regresar</a>
+        </div>
+    </div>
+</body>
+</html>

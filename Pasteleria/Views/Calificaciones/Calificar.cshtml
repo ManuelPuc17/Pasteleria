@@ -1,0 +1,51 @@
+﻿@model Pasteleria.Models.CalificacionDTO
+
+@{
+    ViewData["Title"] = "Calificar";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Calificar</h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Calificar" method="post">
+                        <div class="form-group">
+                            <label asp-for="IdPastel" class="control-label">Seleccione un Pastel</label>
+                            <select asp-for="IdPastel" class="form-control">
+                                <option value="">Seleccione un Pastel</option>
+                                @foreach (var pastel in Model.ListaPasteles)
+                                {
+                                    <option value="@pastel.id">@pastel.Nombre</option>
+                                }
+                            </select>
+                            <span asp-validation-for="IdPastel" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Sabor" class="control-label">Sabor</label>
+                            <input asp-for="Sabor" class="form-control" />
+                            <span asp-validation-for="Sabor" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Presentacion" class="control-label">Presentación</label>
+                            <input asp-for="Presentacion" class="form-control" />
+                            <span asp-validation-for="Presentacion" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Calificar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

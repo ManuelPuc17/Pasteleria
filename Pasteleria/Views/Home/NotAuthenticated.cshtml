@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Not Authenticated";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="text-center">
+            <h1 class="display-4">Not Authenticated</h1>
+            <p class="lead">Necesitas iniciar sesión para acceder a esta página.</p>
+            <form class="form-inline justify-content-center" asp-area="" asp-controller="Acceso" asp-action="Logout" method="post">
+                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Cerrar Sesión</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

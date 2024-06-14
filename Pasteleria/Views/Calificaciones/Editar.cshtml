@@ -1,0 +1,55 @@
+﻿@model Pasteleria.Models.CalificacionDTO
+
+@{
+    ViewData["Title"] = "Editar Calificacion";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Editar Calificacion</h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Editar" method="post">
+                        <div class="form-group">
+                            <label asp-for="Usuario" class="control-label"></label>
+                            <input asp-for="Usuario" class="form-control" disabled />
+                            <span asp-validation-for="Usuario" class="text-danger"></span>
+                        </div>
+                        <input asp-for="IdUsuario" type="hidden" readonly />
+                        <div class="form-group">
+                            <label asp-for="Pastel" class="control-label"></label>
+                            <input asp-for="Pastel" class="form-control" disabled />
+                            <span asp-validation-for="Pastel" class="text-danger"></span>
+                        </div>
+                        <input asp-for="IdPastel" type="hidden" readonly />
+                        <div class="form-group">
+                            <label asp-for="Sabor" class="control-label"></label>
+                            <input asp-for="Sabor" class="form-control" />
+                            <span asp-validation-for="Sabor" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Presentacion" class="control-label"></label>
+                            <input asp-for="Presentacion" class="form-control" />
+                            <span asp-validation-for="Presentacion" class="text-danger"></span>
+                        </div>
+                        <div class="form-group mt-3">
+                            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                            <a asp-action="MiLista" class="btn btn-secondary">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,31 @@
+﻿@model List<CalificacionDTO>
+
+@{
+    ViewData["Title"] = "Calificaciones";
+}
+
+<h2>Calificaciones</h2>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Pastel</th>
+                <th>Sabor</th>
+                <th>Presentación</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cali in Model)
+            {
+                <tr>
+                    <td>@cali.Usuario</td>
+                    <td>@cali.Pastel</td>
+                    <td>@cali.Sabor</td>
+                    <td>@cali.Presentacion</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
